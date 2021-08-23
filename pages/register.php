@@ -14,7 +14,7 @@
                     <div class="card">
                         <div class="card-header">Register</div>
                         <div class="card-body">
-                            <form name="my-form" onsubmit="return validform()" action="" method="">
+                            <form name="my-form" action="../includes/branched/register.php" method="POST">
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">First Name</label>
                                     <div class="col-md-6">

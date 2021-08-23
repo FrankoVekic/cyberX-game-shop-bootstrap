@@ -14,18 +14,18 @@
                     <div class="card">
                         <div class="card-header">Login</div>
                         <div class="card-body">
-                            <form name="my-form" onsubmit="return validform()" action="" method="">
+                            <form action="<?php echo $appLink . 'includes/branched/login.php'; ?>" method="POST">
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">User name</label>
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="First name" id="full_name" class="form-control" name="full-name">
+                                        <input type="text" placeholder="Enter user name" id="username" class="form-control" name="username">
                                     </div>
                                 </div>
                                 <br>
                                 <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="col-md-6">
-                                        <input type="password" id="email_address" placeholder="Last name" class="form-control" name="email-address">
+                                        <input type="password" id="password" placeholder="Enter Password" class="form-control" name="password">
                                     </div>
                                 </div>
                                 <br>

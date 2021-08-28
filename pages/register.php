@@ -71,6 +71,7 @@
         </div>
     </div>
 </div>
+<br>
     <?php require_once '../includes/branched/javascript.php'; ?>
     <?php require_once '../includes/branched/footer.php'; ?>
 </body>

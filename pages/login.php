@@ -7,7 +7,7 @@
 <body>
     <?php require_once '../includes/branched/header.php'; ?>
     <br><br><br>
-<div class="row" style="margin-top: 150px;">
+<div class="row" style="margin-top: 100px;">
     <div class="cotainer">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -19,6 +19,7 @@
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">User name</label>
                                     <div class="col-md-6">
                                         <input type="text" placeholder="Enter user name" id="username" class="form-control" name="username">
+                                        <small id="emailHelp" class="form-text text-muted">Username: admin123</small>
                                     </div>
                                 </div>
                                 <br>
@@ -26,6 +27,7 @@
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="col-md-6">
                                         <input type="password" id="password" placeholder="Enter Password" class="form-control" name="password">
+                                        <small id="emailHelp" class="form-text text-muted">Password: admin123</small>
                                     </div>
                                 </div>
                                 <br>

@@ -4,6 +4,7 @@ class Config {
 
     public static function connect()
     {
+    
         $host = "localhost";
         $username = "root";
         $password = "";

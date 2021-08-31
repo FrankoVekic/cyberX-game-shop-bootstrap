@@ -29,7 +29,7 @@
       <td><?php echo $product['quantity']; ?></td>
       <td>
       <a href="../core/change.php" class="edit" title="Edit"><i class="material-icons">&#xE254;</i></a>
-        <a href="../pages/admin.php?action=delete&id=<?=$product['id']?>" class="delete" title="Delete"><i class="material-icons">&#xE872;</i></a>
+      <a href="../core/delete.php?id=<?=$product['id']?>" class="delete" title="Delete"><i class="material-icons">&#xE872;</i></a>
       </td>
     </tr>
     <?php endforeach; ?>
@@ -39,21 +39,21 @@
 <br><br>
 <h1>Add new game to database!</h1>
 <hr>
-<form>
+<form class="form" method="POST" action="../core/newGame.php">
   <div class="form-group">
     <label for="name">Game name</label>
-    <input type="text" class="form-control" id="name" aria-describedby="Game Name" placeholder="Game name">
+    <input type="text" class="form-control" name="name" placeholder="Game name">
   </div>
   <div class="form-group">
     <label for="name">Price</label>
-    <input type="number" class="form-control" id="price" aria-describedby="Game Price" placeholder="Price">
+    <input type="number" class="form-control" name="price" placeholder="Price">
   </div>
   <div class="form-group">
     <label for="name">Quantity</label>
-    <input type="number" class="form-control" id="quantity" aria-describedby="Game Quantity" placeholder="Quantity">
+    <input type="number" class="form-control" name="quantity" placeholder="Quantity">
   </div>
   <br>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" name="add" class="btn btn-primary">Add</button>
 </form>
 <br>
     <?php require_once '../includes/branched/javascript.php'; ?>

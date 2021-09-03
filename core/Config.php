@@ -22,7 +22,7 @@ class Config {
     }
 }
         $conn = Config::connect();
-        $stmt = $conn->prepare('SELECT * FROM games WHERE id > 0 ORDER BY id');
+        $stmt = $conn->prepare('SELECT * FROM games ORDER BY id');
         $stmt->execute();
         $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $games;

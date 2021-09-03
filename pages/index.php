@@ -15,7 +15,7 @@
             </div>
         <br>
     <div>
-        <a href="register.php" class="btn btn-secondary btn-lg">Register</a>
+        <a href="login.php" class="btn btn-secondary btn-lg">Login</a>
     </div>
 </div>
     <?php require_once '../includes/branched/javascript.php'; ?>

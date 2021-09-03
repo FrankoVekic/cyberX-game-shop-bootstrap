@@ -19,7 +19,8 @@
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">User name</label>
                                     <div class="col-md-6">
                                         <input type="text" placeholder="Enter user name" id="username" class="form-control" name="username">
-                                        <small id="emailHelp" class="form-text text-muted">Username: admin123</small>
+                                        <small id="emailHelp" class="form-text" style="color:red">Username: admin123</small><br>
+                                        <small id="emailHelp" class="form-text" style="color:blue">Username: user123</small>
                                     </div>
                                 </div>
                                 <br>
@@ -27,7 +28,8 @@
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="col-md-6">
                                         <input type="password" id="password" placeholder="Enter Password" class="form-control" name="password">
-                                        <small id="emailHelp" class="form-text text-muted">Password: admin123</small>
+                                        <small id="emailHelp" class="form-text" style="color:red">Password: admin123</small><br>
+                                        <small id="emailHelp" class="form-text" style="color:blue">Password: user123</small>
                                     </div>
                                 </div>
                                 <br>

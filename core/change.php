@@ -1,44 +1,44 @@
 <?php require_once '../includes/branched/config.php'?>
 <?php require_once '../includes/branched/adminProtection.php'; ?>
 <?php require_once '../core/Config.php';?>
-<?php require_once '../core/newGame.php'; ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php require_once '../includes/branched/head.php'; ?>
-</head>
-<body>
-    <?php require_once '../includes/branched/header.php'; ?>
 
-    <table class="table table-striped" style="margin-top: 150px;">
-  <thead>
-    <tr>
-      <th scope="col">Game ID</th>
-      <th scope="col">Game name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <form method="POST">
-  <tbody>
-  <?php Config::connect();?>
-  <?php foreach ($games as $product): ?>
-    <tr>
-      <td><input type="number" name="gameid" value="<?php echo $product['id'];?>"></td>
-      <td><input type="text" name="gamename" value="<?php echo $product['name']; ?>"></td>
-      <td><input type="number" name="gameprice" value="<?php echo $product['price']; ?>"></td>
-      <td><input type="number" name="gamequantity" value="<?php echo $product['quantity']; ?>"></td>
-      <td>
-      <button type="submit" name="save" class="button">Save</button>
-      <button type="submit" name="cancel" class="button">Cancel</button>
-      </td>
-    </tr>
-    <?php endforeach; ?>
-  </tbody>
-  <form>
-</table>
-    <?php require_once '../includes/branched/javascript.php'; ?>
-    <?php require_once '../includes/branched/footer.php'; ?>
-</body>
-</html>  
+<?php 
+$name = '';
+$price = '';
+$quantity = '';
+$change = false;
+$id=0;
+
+if(isset($_GET['action'])){
+  if($_GET['action'] == "change"){
+    $change = true;
+    $id=$_GET['id'];
+    $query = $conn->prepare("SELECT * FROM games WHERE id = $id;");
+    $query->execute();
+    $gamess = $query->fetch();
+
+      if(!$games){
+          header('location:' . $appLink . 'pages/admin.php?action=error');
+          exit();
+      }
+      else {
+          $name = $gamess['name'];
+          $price = round($gamess['price']);
+          $quantity = round($gamess['quantity']);
+      }
+  }
+}
+if(isset($_POST['save'])){
+
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $quantity = $_POST['quantity'];
+    
+    $query = $conn->prepare("UPDATE games SET name= '$name', price =$price,quantity=$quantity WHERE id = $id;");
+    $query->execute();
+    header("location" .$appLink."pages/admin.php?edit=success");
+    exit();
+    }
+
+
